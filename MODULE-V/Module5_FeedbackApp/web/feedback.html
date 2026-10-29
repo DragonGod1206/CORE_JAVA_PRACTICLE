@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Share your feedback</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            color: #172033;
+            background: #f3f6fb;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100vh;
+            margin: 0;
+            padding: 48px 20px;
+            display: grid;
+            place-items: center;
+        }
+
+        main {
+            width: min(100%, 520px);
+            padding: 36px;
+            border: 1px solid #e1e7f0;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 16px 40px rgb(23 32 51 / 8%);
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin: 0 0 28px;
+            color: #647086;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 7px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #cbd4e1;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid rgb(48 95 219 / 18%);
+            border-color: #305fdb;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 12px 16px;
+            border: 0;
+            border-radius: 8px;
+            background: #305fdb;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #244ebc;
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 26px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Share your feedback</h1>
+        <p>Your comments help us improve. All fields are required.</p>
+
+        <form action="submitFeedback" method="post">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="feedbackType">Feedback type</label>
+            <select id="feedbackType" name="feedbackType" required>
+                <option value="" selected disabled>Choose a type</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Compliment">Compliment</option>
+            </select>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" required></textarea>
+
+            <button type="submit">Submit feedback</button>
+        </form>
+    </main>
+</body>
+</html>
